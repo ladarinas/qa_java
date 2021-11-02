@@ -17,8 +17,8 @@ public class LionKittenAndFoodTest {
     Feline feline;
 
     @Test
-    public void testLionGetKittens() {
-    Lion lion = new Lion(feline);
+    public void testLionGetKittens() throws Exception {
+    Lion lion = new Lion("Самец", feline);
         when(feline.getKittens()).thenReturn(1);
         int actual = lion.getKittens();
         int expected = 1;
@@ -26,7 +26,7 @@ public class LionKittenAndFoodTest {
 
     @Test
     public void testLionGetFood() throws Exception {
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion("Самец", feline);
         when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> actual = lion.getFood();
         Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), actual);

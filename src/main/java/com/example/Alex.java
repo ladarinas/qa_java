@@ -3,15 +3,15 @@ package com.example;
 import java.util.List;
 
 public class Alex extends Lion {
+    private static Feline feline;
 
     public Alex() throws Exception {
-        super("Самец");
+        super("Самец", feline);
     }
 
     @Override
     public int getKittens() {
-        Feline feline = new Feline();
-        return feline.getKittens(0);
+        return 0;
     }
 
     public List<String> getFriends() {
